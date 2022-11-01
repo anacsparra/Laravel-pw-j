@@ -64,8 +64,9 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $Produto = ProdutoModel::find($id);
+        $title = "Editar Produto- {$Produto->produto}";
+        return view ('Produto-editar',compact('title', 'Produto'));
     }
 
     /**
@@ -76,8 +77,9 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   $produto = ProdutoModel::find($id);
+        $produto->update(['produto'=>$request->txProduto]);
+        return redirect()->action('App\Http\Controlers\ProdutoController@exibirProduto');
     }
 
     /**

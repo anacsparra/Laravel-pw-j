@@ -64,8 +64,9 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $Pedido = PedidoModel::find($id);
+        $title = "Editar Pedido- {$Pedido->pedido}";
+        return view ('Pedido-editar',compact('title', 'Pedido'));
     }
 
     /**
@@ -76,8 +77,10 @@ class PedidoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $pedido = PedidoModel::find($id);
+        $pedido->update(['pedido'=>$request->txPedido]);
+        return redirect()->action('App\Http\Controlers\PedidoController@exibirPedido');
     }
 
     /**

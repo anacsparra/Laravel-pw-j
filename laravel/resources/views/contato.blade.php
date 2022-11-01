@@ -35,7 +35,8 @@
             <p> Assunto: {{$c->assunto}} </p>
             <p> Mensagem: {{$c->mensagem}} </p>
             <a href="/contato/{{$c->idContato}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira" /> </a>
-            </div>
+            <a href="/contato-editar/{{$c->idContato}}/editar"> Editar</a>
+</div>
 
     
             @endforeach

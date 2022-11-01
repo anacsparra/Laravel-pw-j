@@ -66,8 +66,9 @@ class ContatoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $Contato = ContatoModel::find($id);
+        $title = "Editar Contato- {$Contato->contato}";
+        return view ('Contato-editar',compact('title', 'Contato'));
     }
 
     /**
@@ -78,8 +79,9 @@ class ContatoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   $contato = ContatoModel::find($id);
+        $contato->update(['contato'=>$request->txContato]);
+        return redirect()->action('App\Http\Controlers\ContatoController@exibirContato');
     }
 
     /**

@@ -71,6 +71,7 @@
                 <p> Telefone: {{$cli->fone}} </p>
                 <p> Celular: {{$cli->celular}} </p>
                 <a href="/cliente/{{$cli->idCliente}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira" /> </a>
+                <a href="/cliente-editar/{{$cli->idCliente}}/editar"> Editar</a>
 
                 </div>
                 @endforeach

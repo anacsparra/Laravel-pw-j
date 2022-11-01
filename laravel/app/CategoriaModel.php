@@ -8,5 +8,8 @@ class CategoriaModel extends Model
 {
     protected $table = "tbCategoria";
     protected $fillable = ['idCategoria','categoria'];
+    protected $primaryKey = 'idCategoria';
     public $timestamps = false;
+
+
 }

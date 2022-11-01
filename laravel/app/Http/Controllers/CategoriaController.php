@@ -62,7 +62,9 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Categoria = CategoriaModel::find($id);
+        $title = "Editar Categoria- {$Categoria->categoria}";
+        return view ('Categoria-editar',compact('title', 'Categoria'));
     }
 
     /**
@@ -74,7 +76,9 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = CategoriaModel::find($id);
+        $categoria->update(['categoria'=>$request->txCategoria]);
+        return redirect()->action('CategoriaController@exibirCategoria');
     }
 
     /**
