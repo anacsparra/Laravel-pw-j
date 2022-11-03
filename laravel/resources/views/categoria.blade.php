@@ -21,7 +21,7 @@
             <h2 > Id Categoria: {{$cat->idCategoria}} </h2>
             <p> Categoria: {{$cat->categoria}} </p>
             <a href="/categoria/{{$cat->idCategoria}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira" /> </a>
-            <a href="/categoria-editar/{{$cat->idCategoria}}/editar"> Editar</a>
+            <a href="/categoria-editar/{{$cat->idCategoria}}/editar"> <img src="{!! asset('img/lapis.png')!!}" class="lapis" /> </a>
 
         </div>
             @endforeach

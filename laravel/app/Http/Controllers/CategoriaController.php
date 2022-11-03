@@ -78,7 +78,7 @@ class CategoriaController extends Controller
     {
         $categoria = CategoriaModel::find($id);
         $categoria->update(['categoria'=>$request->txCategoria]);
-        return redirect()->action('CategoriaController@exibirCategoria');
+        return redirect('/categoria');
     }
 
     /**

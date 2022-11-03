@@ -28,7 +28,7 @@
             <p> Produto: {{$p->produto}} </p>
             <p> Valor: {{$p->valor}} </p>
             <a href="/produto/{{$p->idProduto}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira" /></a>
-            <a href="/produto-editar/{{$p->idProduto}}/editar"> Editar</a>
+            <a href="/produto-editar/{{$p->idProduto}}/editar">  <img src="{!! asset('img/lapis.png')!!}" class="lapis" /> </a>
 </div>
             @endforeach
         </div>

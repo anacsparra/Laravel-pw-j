@@ -34,8 +34,8 @@
             <p> Telefone:{{$c->fone}} </p>
             <p> Assunto: {{$c->assunto}} </p>
             <p> Mensagem: {{$c->mensagem}} </p>
-            <a href="/contato/{{$c->idContato}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira" /> </a>
-            <a href="/contato-editar/{{$c->idContato}}/editar"> Editar</a>
+            <a href="/contato/{{$c->idContato}}"> <img src="{!! asset('img/lixeira.png')!!}" class="lixeira1" /> </a>
+            <a href="/contato-editar/{{$c->idContato}}/editar"> <img src="{!! asset('img/lapis.png')!!}" class="lapis1" /> </a>
 </div>
 
     
