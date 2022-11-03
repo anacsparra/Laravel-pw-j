@@ -87,8 +87,11 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   $cliente = ClienteModel::find($id);
-        $cliente->update(['cliente'=>$request->txCliente]);
+    {   
+        $cliente = ClienteModel::find($id);
+
+        //ANA MEXEU AQUI NO TXNOME, TAVA TXCLIENTE
+        $cliente->update(['cliente'=>$request->txNome]);
         return redirect('/cliente');
     }
 

@@ -17,7 +17,23 @@ class ProdutoController extends Controller
     {
         $produto = ProdutoModel::all();
         return view('produto',compact('produto'));
-    }
+
+
+        /*busca de produtos*/
+        $search = request('search');
+
+        if($search) {
+
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+
+        } else {
+            $events = Event::all();
+        }        
+    
+        return view('produto',['events' => $events, 'search' => $search]);
+            }
 
     /**
      * Show the form for creating a new resource.
@@ -26,7 +42,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -41,6 +57,7 @@ class ProdutoController extends Controller
         $produto -> idProduto = $request->txIdProduto;
         $produto -> produto = $request->txProduto;
         $produto -> valor = $request->txValor;
+        $produto->items = $request->items;
         $produto -> save();
         
         return redirect("/produto");
@@ -54,7 +71,8 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::findOrFail($id);
+        return view('events.show', ['event' => $event]);
     }
 
     /**
@@ -78,7 +96,7 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {   $produto = ProdutoModel::find($id);
-        $produto->update(['produto'=>$request->txProduto]);
+        $produto->update(['produto'=>$request->txIdProduto]);
         return redirect('/produto');
     }
 

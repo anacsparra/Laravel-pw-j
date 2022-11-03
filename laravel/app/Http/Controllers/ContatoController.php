@@ -80,7 +80,7 @@ class ContatoController extends Controller
      */
     public function update(Request $request, $id)
     {   $contato = ContatoModel::find($id);
-        $contato->update(['contato'=>$request->txContato]);
+        $contato->update(['contato'=>$request->txNome]);
         return redirect('/contato');
     }
 

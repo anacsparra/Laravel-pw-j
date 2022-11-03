@@ -55,3 +55,10 @@ Route::post('/cliente-alterar/{id}','ClienteController@update');
 Route::post('/contato-alterar/{id}','ContatoController@update');
 Route::post('/pedido-alterar/{id}','PedidoController@update');
 Route::post('/produto-alterar/{id}','ProdutoController@update');
+
+
+/*Criação de Evento para busca -- Olhar o caminho das rotas*/
+Route::get('/produto', [EventController::class, 'index']);
+Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/{id}', [EventController::class, 'show']);
+Route::post('/events', [EventController::class, 'store']);

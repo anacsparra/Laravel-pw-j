@@ -38,6 +38,7 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $pedido = new PedidoModel();
+        $pedido -> idPedido = $request->txIdPedido;
         $pedido -> idCategoria = $request->txIdCategoria;
         $pedido -> idProduto = $request->txProduto;
         $pedido -> valor_t = $request->txValor;
@@ -79,7 +80,7 @@ class PedidoController extends Controller
     public function update(Request $request, $id)
     {   
         $pedido = PedidoModel::find($id);
-        $pedido->update(['pedido'=>$request->txPedido]);
+        $pedido->update(['pedido'=>$request->txIdPedido]);
         return redirect('/pedido');
     }
 
