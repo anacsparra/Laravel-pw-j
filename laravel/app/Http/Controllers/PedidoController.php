@@ -80,7 +80,7 @@ class PedidoController extends Controller
     {   
         $pedido = PedidoModel::find($id);
         $pedido->update(['pedido'=>$request->txPedido]);
-        return redirect()->action('App\Http\Controlers\PedidoController@exibirPedido');
+        return redirect('/pedido');
     }
 
     /**

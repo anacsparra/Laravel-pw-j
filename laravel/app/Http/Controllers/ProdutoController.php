@@ -38,7 +38,7 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         $produto = new ProdutoModel();
-        $produto -> idCategoria = $request->txIdCategoria;
+        $produto -> idProduto = $request->txIdProduto;
         $produto -> produto = $request->txProduto;
         $produto -> valor = $request->txValor;
         $produto -> save();
@@ -79,7 +79,7 @@ class ProdutoController extends Controller
     public function update(Request $request, $id)
     {   $produto = ProdutoModel::find($id);
         $produto->update(['produto'=>$request->txProduto]);
-        return redirect()->action('App\Http\Controlers\ProdutoController@exibirProduto');
+        return redirect('/produto');
     }
 
     /**
