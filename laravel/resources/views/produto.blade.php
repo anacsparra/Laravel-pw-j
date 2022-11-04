@@ -22,20 +22,46 @@
         </div>
 
         <?php /* TESTE DE BUSCA POR PRODUTOS*/  ?>
-        <div id="search-container" class="col-md-12">
-        <h1 class="titulo">Busque um produto</h1>
-        <form action="/" method="GET">
+        <div class="espaco">
+        <h1 class="titulo">Busque por um produto</h1>
+        <form action="/produto" method="GET">
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+        </div>
+            <div class="espaco-but">
+                <input class="btn btn-danger" type="submit" placeholder="Salvar"/>
+            </div>
+</form>
+<div>
+         
+    
+        <?php /*
+
+        <div class="espaco">
+        <h1 class="titulo">Busque um produto pelo valor</h1>
+        <form action="/produto" method="GET">
+            <input type="text" id="searchi" name="searchi" class="form-control" placeholder="Valor inicial">
+        </div>
+        <div class="espaco">
+            <input type="text" id="searchf" name="searchf" class="form-control" placeholder="Valor final">
+        </div>
+        
+            <div class="espaco-but">
+                <input class="btn btn-danger" type="submit" placeholder="Salvar"/>
+            </div>
         </form>
-</div>
-        <div id="events-container" class="col-md-12">
-         @if($search)
+
+        
+
+        <div>
+         @if($searchi && $searchf)
+        <h1 class="titulo">Buscando por: {{ $searchi }} & {{ $searchf }}</h1>
+        @elseif($search)
         <h1 class="titulo">Buscando por: {{ $search }}</h1>
-        @else
-        <h1 class="titulo">Produtos disponíveis</h1>
-        <p class="subtitle">Veja os produtos disponíveis</p>
-    @endif
-    <?php //finalização ?>
+        @else 
+        <h1 class="titulo">Produtos disponíveis:</h1>
+        @endif
+
+        */ ?>
       
 
         <div class="linha-space">
@@ -51,16 +77,19 @@
             @endforeach
         </div>
     </section>
-    @endsection
 
 
     <?php //continuação do teste?>
-        @if(count($events) == 0 && $search)
-            <p>Não foi possível encontrar nenhum produto com {{ $search }}! <a href="/">Ver todos</a></p>
-        @elseif(count($events) == 0)
+        @if(count($produto) == 0 && $search)
+            <p>Não foi possível encontrar nenhum produto com {{ $search }}! <a href="/produto">Ver todos</a></p>
+            <?php /*@elseif(count($produto) == 0 && $searchi && $searchf)
+            <p>Não foi possível encontrar nenhum produto entre {{ $searchi }} & {{ $searchf }} reais! <a href="/produto">Ver todos</a></p>   */ ?>
+        @elseif(count($produto) == 0)
             <p>Não há produtos disponíveis</p>
         @endif
+
         <?php/* final c link do repositório:
         https://github.com/matheusbattisti/curso_laravel/blob/Aula_21/app/Http/Controllers/EventController.php */?>
 
+@endsection
 

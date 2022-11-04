@@ -11,6 +11,8 @@ class ProdutoModel extends Model
     protected $primaryKey = 'idProduto';
     public $timestamps = false;
 
-    /* não sei oq é, mas tava no codg dele*/
-    protected $casts = ['items' => 'array'];
+
+    
+    /* não sei oq é, mas tava no codg dele
+    protected $casts = ['items' => 'array'];*/
 }

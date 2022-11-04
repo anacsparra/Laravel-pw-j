@@ -57,8 +57,9 @@ Route::post('/pedido-alterar/{id}','PedidoController@update');
 Route::post('/produto-alterar/{id}','ProdutoController@update');
 
 
-/*Criação de Evento para busca -- Olhar o caminho das rotas*/
-Route::get('/produto', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/{id}', [EventController::class, 'show']);
-Route::post('/events', [EventController::class, 'store']);
+/*Criação de Produtoo para busca -- Olhar o caminho das rotas*/
+Route::get('/produto','ProdutoController@index1');
+// Route::get('/produto','ProdutoController@index2');
+Route::get('/produto/create', 'ProdutoController@create');
+Route::get('/produto/{id}', 'ProdutoController@show');
+Route::post('/produto', 'ProdutoController@store');

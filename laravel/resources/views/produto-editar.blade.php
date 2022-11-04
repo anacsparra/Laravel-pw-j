@@ -7,7 +7,7 @@
             {{csrf_field()}}
         <div class="espaco">
             <input  class="form-control" type="text" name="txIdCategoria"
-            placeholder="Insira o ID da categoria" value="{{$Produto->idProduto}}"/>
+            placeholder="Insira o ID da categoria" value="{{$Produto->idCategoria}}"/>
         </div>        
         <div class="espaco">
             <input  class="form-control" type="text" name="txProduto"

@@ -63,7 +63,7 @@ insert into tbProduto values(null, 3,"Cookie", 400);
 insert into tbProduto values(null, 1,"Bengué", 140);
 insert into tbProduto values(null, 2,"Hot wheels", 1200);
 
-insert into tbcontato values(null,
+insert into tbContato values(null,
 'Ana',
 'ana@gmail.com',
 '1199999-9999',

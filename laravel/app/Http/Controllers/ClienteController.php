@@ -89,9 +89,21 @@ class ClienteController extends Controller
     public function update(Request $request, $id)
     {   
         $cliente = ClienteModel::find($id);
+        $cliente->update(['nome'=> $request->txNome]);
+        $cliente->update(['dtNasc'=> $request->txData]);
+        $cliente->update(['estadoCivil'=> $request->txCiv]);
+        $cliente->update(['endereco'=> $request->txEnd]);
+        $cliente->update(['numero'=> $request->txNum]);
+        $cliente->update(['complemento'=> $request->txCom]);
+        $cliente->update(['cep'=> $request->txCEP]);
+        $cliente->update(['cidade'=> $request->txCid]);
+        $cliente->update(['estado'=> $request->txEst]);
+        $cliente->update(['Rg'=> $request->txRG]);
+        $cliente->update(['cpf'=> $request->txCPF]);
+        $cliente->update(['email'=> $request->txEmail]);
+        $cliente->update(['fone'=> $request->txTel]);
+        $cliente->update(['celular'=> $request->txCel]);
 
-        //ANA MEXEU AQUI NO TXNOME, TAVA TXCLIENTE
-        $cliente->update(['cliente'=>$request->txNome]);
         return redirect('/cliente');
     }
 

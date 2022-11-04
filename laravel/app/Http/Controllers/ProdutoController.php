@@ -17,24 +17,37 @@ class ProdutoController extends Controller
     {
         $produto = ProdutoModel::all();
         return view('produto',compact('produto'));
+    }
 
-
+    public function index1(){
         /*busca de produtos*/
         $search = request('search');
-
         if($search) {
-
-            $events = Event::where([
-                ['title', 'like', '%'.$search.'%']
-            ])->get();
-
-        } else {
-            $events = Event::all();
-        }        
+            $produto = ProdutoModel::where([['produto', 'like', '%'.$search.'%']])->get();
+        } 
     
-        return view('produto',['events' => $events, 'search' => $search]);
+        else {
+            $produto = ProdutoModel::all();
+        }        
+        return view('produto',['produto' => $produto, 'search' => $search]);
             }
 
+
+   /* public function index2(){
+        
+        $searchi = request('searchi');
+        $searchf = request('searchf');
+        if($searchi && $searchf){
+            $produto = ProdutoModel::where('valor', '>', $searchi)->get();
+            $produto = ProdutoModel::where('valor', '<', $searchf)->get();
+        } 
+        else {
+            $produto = ProdutoModel::all();
+        }        
+        return view('produto',['produto' => $produto, 'searchi' => $searchi, 'searchf' => $searchf]);
+            } */
+
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -42,7 +55,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('produto.create');
     }
 
     /**
@@ -57,7 +70,7 @@ class ProdutoController extends Controller
         $produto -> idProduto = $request->txIdProduto;
         $produto -> produto = $request->txProduto;
         $produto -> valor = $request->txValor;
-        $produto->items = $request->items;
+        /* $produto->items = $request->items; */
         $produto -> save();
         
         return redirect("/produto");
@@ -71,8 +84,8 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        $event = Event::findOrFail($id);
-        return view('events.show', ['event' => $event]);
+        $produto = Produto::findOrFail($id);
+        return view('produto.show', ['Produto' => $produto]);
     }
 
     /**
@@ -82,7 +95,8 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   $Produto = ProdutoModel::find($id);
+    {   
+        $Produto = ProdutoModel::find($id);
         $title = "Editar Produto- {$Produto->produto}";
         return view ('Produto-editar',compact('title', 'Produto'));
     }
@@ -95,8 +109,12 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   $produto = ProdutoModel::find($id);
-        $produto->update(['produto'=>$request->txIdProduto]);
+    {   
+        $produto = ProdutoModel::find($id);
+        $produto->update(['idCategoria'=>$request->txIdCategoria]);
+        $produto->update(['produto'=>$request->txProduto]);
+        $produto->update(['valor'=>$request->txValor]);
+
         return redirect('/produto');
     }
 

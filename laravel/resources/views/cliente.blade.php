@@ -6,46 +6,60 @@
             <form action="{{url('/cliente/inserir')}}" method="post">
             {{csrf_field()}}
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Nome" name="txNome" value="Insira seu nome"/>
+            <input  class="form-control" type="text"  name="txNome" 
+            placeholder="Insira seu nome"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Data de nascimento" name="txData" value="Insira sua data de nasc - escreva em XXXX-XX-XX"/>
+            <input  class="form-control" type="text" name="txData" 
+            placeholder="Insira sua data de nasc - escreva em XXXX-XX-XX"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="EstadoCiv" name="txCiv" value="Insira seu Estado Civil"/>
+            <input  class="form-control" type="text"  name="txCiv" 
+            placeholder="Insira seu Estado Civil"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="textarea" placeholder="Endereço" name="txEnd" value="Insira seu endereço"/>
+            <input  class="form-control" type="textarea"  name="txEnd" 
+            placeholder="Insira seu endereço"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="number" placeholder="Número" name="txNum" value="Insira seu número"/>
+            <input  class="form-control" type="number"  name="txNum" 
+            placeholder="Insira seu número"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Complemento" name="txCom" value="Insira seu complemento"/>
+            <input  class="form-control" type="text"  name="txCom" 
+            placeholder="Insira seu complemento"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="number" placeholder="CEP" name="txCEP" value="Insira seu CEP"/>
+            <input  class="form-control" type="number" name="txCEP" 
+            placeholder="Insira seu CEP"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Cidade" name="txCid" value="Insira cidade"/>
+            <input  class="form-control" type="text" name="txCid" 
+            placeholder="Insira cidade"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Estado" name="txEst" value="Insira estado"/>
+            <input  class="form-control" type="text" name="txEst" 
+            placeholder="Insira estado"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="RG" name="txRG" value="Insira seu RG"/>
+            <input  class="form-control" type="text" name="txRG" 
+            placeholder="Insira seu RG"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="number" placeholder="CPF" name="txCPF" value="Insira seu CPF"/>
+            <input  class="form-control" type="number"  name="txCPF" 
+            placeholder="Insira seu CPF"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="email" placeholder="Email" name="txEmail" value="Insira seu email"/>
+            <input  class="form-control" type="email" name="txEmail"
+            placeholder="Insira seu email"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Telefone" name="txTel" value="Insira seu telefone"/>
+            <input  class="form-control" type="text" name="txTel"
+            placeholder="Insira seu telefone"/>
         </div>
         <div class="espaco">
-            <input  class="form-control" type="text" placeholder="Celular" name="txCel" value="Insira seu celular"/>
+            <input  class="form-control" type="text"name="txCel"
+            placeholder="Insira seu celular"/>
         </div>
         <div class="espaco">
             <input class="btn btn-danger" type="submit" value="Salvar"/>
