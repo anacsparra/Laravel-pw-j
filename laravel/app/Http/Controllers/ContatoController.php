@@ -100,4 +100,33 @@ class ContatoController extends Controller
 
         return redirect("/contato");
     }
+
+    public function contatos(){
+        $contato = ContatoModel::all();
+        return $contato;
+    }
+
+    public function contatoById($id){
+        $contato = ContatoModel::where('idContato','=',$id)->get();        
+        return $contato;        
+    }
+
+    public function contatoSalvar(Request $request){
+
+        $contato = new ContatoModel;
+
+        $contato->nome = $request->input('nome');
+        $contato->email = $request->input('email');
+        $contato->fone = $request->input('telefone');
+        $contato->assunto = $request->input('assunto');
+        $contato->mensagem = $request->input('mensagem');
+
+        $contato -> save();
+    }
+
+    // public function deleteContatoById($id){
+       // ContatoModel::where('idContato',$id)->delete();
+   // }
+
+
 }
